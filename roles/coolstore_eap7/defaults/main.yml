@@ -1,0 +1,4 @@
+---
+# defaults file for roles/coolstore-eap7
+guid: 76trl
+ocp_namespace: coolstore-mono

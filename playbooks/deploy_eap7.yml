@@ -1,0 +1,6 @@
+- name: Deploy Coolstore on EAP 7
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  roles:
+    - opentraining.mta_dev_lightspeed.coolstore_eap7

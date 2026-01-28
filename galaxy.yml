@@ -1,0 +1,14 @@
+namespace: opentraining
+name: mta_dev_lightspeed
+version: 1.0.0
+readme: README.md
+authors:
+- Yogita Soni
+description: your collection description
+license:
+  - PTL
+tags:
+  - mta
+  - openshift
+  - redhat-dev-lightspeed
+repository: http://example.com/repository

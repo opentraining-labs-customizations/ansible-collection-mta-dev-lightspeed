@@ -1,0 +1,14 @@
+---
+# tasks file for roles/coolstore_eap7
+
+- name: Apply OpenShift manifests
+  kubernetes.core.k8s:
+    state: present
+    definition: "{{ lookup('template', item) }}"
+  loop:
+    - 00-namespace.yaml
+    - 01-postgresql-deploy-svc.yaml
+    - 02-keyclaok-deploy-svc-route.yaml
+    - 03-keycloak-job.yaml
+    - 04-coolstore.yaml
+
