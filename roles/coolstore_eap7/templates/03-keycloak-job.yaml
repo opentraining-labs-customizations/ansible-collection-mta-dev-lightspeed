@@ -1,8 +1,8 @@
----
 apiVersion: batch/v1
 kind: Job
 metadata:
   name: keycloak-bootstrap
+  namespace: {{ ocp_namespace }}
 spec:
   backoffLimit: 3
   template:
