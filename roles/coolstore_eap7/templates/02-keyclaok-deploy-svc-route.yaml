@@ -1,4 +1,20 @@
 ---
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: keycloak-rhel9
+  namespace: coolstore-mono
+spec:
+  tags:
+    - name: "22"
+      from:
+        kind: DockerImage
+        name: registry.redhat.io/rhbk/keycloak-rhel9:22
+      importPolicy:
+        scheduled: true
+      referencePolicy:
+        type: Local
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,7 +32,7 @@ spec:
     spec:
       containers:
         - name: keycloak
-          image: registry.redhat.io/rhbk/keycloak-rhel9:22
+          image: image: image-registry.openshift-image-registry.svc:5000/coolstore-mono/keycloak-rhel9:22
           args:
             - start-dev
             - --import-realm
